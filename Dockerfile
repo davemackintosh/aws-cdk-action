@@ -13,8 +13,8 @@ LABEL "com.github.actions.color"="yellow"
 LABEL "maintainer"="Scott Brenner <scott@scottbrenner.me>"
 
 RUN apk --no-cache add nodejs npm python3 py3-pip git make musl-dev bash docker curl
-RUN curl -sL https://github.com/norwik/Goenv/releases/download/v1.15.0/goenv_Linux_x86_64.tar.gz | tar xz && eval "$(goenv init)"
-RUN goenv install 1.22.1 && goenv global 1.22.1
+RUN curl -sL https://github.com/norwik/Goenv/releases/download/v1.15.0/goenv_Linux_x86_64.tar.gz | tar xz && eval "$(./goenv init)"
+RUN ./goenv install 1.22.1 && ./goenv global 1.22.1
 RUN npm install -g aws-cdk
 RUN pip3 install aws-cdk-lib --break-system-packages
 
